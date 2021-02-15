@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 
+	Product
+{% endblock %}
+
+{% block content %}
+	<h1>Product</h1>
+	<div class="container py-5">
+		<div class="row mt-5">
+			<div class="col-10 mx-auto col-md-6 my-3">
+				<img src="{% static 'images/ferrari.jpg' %}">
+				
+			</div>
+			
+		</div class="col-10 mx-auto col-md-6 my-3">
+		<div>
+			<h1 class="product_title">Ferrari</h1>
+			<h5 class="text-info font-italic mb-4">
+							14.88
+						</h5>
+			<p class="product_desc">Product Description</p>
+			<p class="text-justify product_text">Lrggergewr ge g erg rg rqegwerg eg erger gregr eg ergerg erg reg erg ewrg e weg ewthweger gth rthtr hrteh reth wr th reth wqe erg rtweg</p>
+			<p class="text-justify product_text">Out of Stock</p>
+		</div>
+		
+	</div>
+{% endblock %}
