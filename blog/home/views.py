@@ -5,6 +5,10 @@ from django.urls import reverse_lazy
 from .forms import PostForm
 from .models import Post
 
+def index(request):
+    return render(request, 'home/index.html')
+
+
 def showpost(request):
     posts = Post.objects.all()
     context = {'posts': posts}
