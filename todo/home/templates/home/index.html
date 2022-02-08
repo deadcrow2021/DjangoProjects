@@ -1,0 +1,50 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="todoform">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.title }}
+        <input type="submit" name="Add Task" value="Add Task">
+    </form>
+</div>
+
+<div class="all-tasks">
+
+    {% for task in tasks %}
+    <div class="block">
+        <div class="row">
+            
+            <div class="element">
+                <div class="content">
+                    {% if task.confirm == True %}
+                    <p><strike>{{ task }}</strike></p>
+                    {% else %}
+                    <p>{{ task }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="element-edit">
+                <div class="content">
+                    <a href="{% url 'edit' task.id %}">Update</a>
+                </div>
+            </div>
+
+            <div class="element-delete">
+                <div class="content">
+                    <a href="{% url 'delete' task.id %}">Delete</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}

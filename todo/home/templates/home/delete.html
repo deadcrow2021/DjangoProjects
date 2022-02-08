@@ -1,0 +1,9 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="submit" name="Delete Task" value="Confirm Deletion">
+</form>
+<p class="cancel"><a href="{% url 'todolist' %}">Cancel</a></p>
+{% endblock %}

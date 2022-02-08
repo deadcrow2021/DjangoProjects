@@ -1,0 +1,21 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Add Email</h1>
+<br/><br/>
+
+
+<form action="{% url 'add-email' %}" method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% for f in form %}
+        <p>{{ f }}</p>
+    {% endfor %}
+
+    <input type='submit' value='Submit'>
+
+</form>
+
+<br/><br/>
+{% endblock %}
